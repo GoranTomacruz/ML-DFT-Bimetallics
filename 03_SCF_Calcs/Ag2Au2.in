@@ -1,0 +1,65 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Ag2Au2'
+   prefix           = 'Ag2Au2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Ag 107.8682 Ag.pbe-n-rrkjus_psl.1.0.0.UPF
+Au 196.966569 Au.pbe-n-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.92188400000000 0.00000000000000 0.00000000000000
+-2.96094200000000 5.16399400000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.85172900000000
+
+ATOMIC_POSITIONS alat
+Ag 0.0000000000 0.0000000000 10.0000000000 
+Ag 2.9609422000 0.0000000000 10.0000000000 
+Au 1.4804711000 2.5819972000 10.0000000000 
+Au -1.4804711000 2.5819972000 10.0000000000 
+Ag 2.9609422000 1.6977514000 12.4258645000 
+Ag 0.0000000000 1.6977514000 12.4258645000 
+Au -1.4804711000 4.2797486000 12.4258645000 
+Au 1.4804711000 4.2797486000 12.4258645000 
+Ag 0.0000027000 3.3995693000 14.8930154000 
+Ag 2.9609432000 3.3995805000 14.8930199000 
+Au 4.4414310000 0.8325068000 14.8671544000 
+Au 1.4804674000 0.8325109000 14.8671562000 
+

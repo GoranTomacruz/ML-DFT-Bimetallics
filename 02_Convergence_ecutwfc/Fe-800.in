@@ -1,0 +1,65 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Fe800'
+   prefix           = 'Fe800_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   ecutwfc          = 58.7988941196
+   ecutrho          = 587.988941196
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.99
+   eopreg           = 0.025
+   eamp             = 0.0D0
+   nspin            = 2
+   starting_magnetization(1) = 1.25
+   ntyp             = 1
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Fe  55.845 Fe.pbe-spn-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS angstrom
+5.17857000000000 0.00000000000000 0.00000000000000
+2.58928500000000 4.48477317527598 0.00000000000000
+0.00000000000000 0.00000000000000 24.22830000000000
+
+ATOMIC_POSITIONS angstrom
+Fe  1.2946683929 0.7474771451 9.9999885420
+Fe  3.8839533929 0.7474771451 9.9999885420
+Fe  2.5893108929 2.9898637328 9.9999885420
+Fe  5.1785958928 2.9898637328 9.9999885420
+Fe  5.1785441072 1.4949094425 12.1141500000
+Fe  2.5892591072 1.4949094425 12.1141500000
+Fe  6.4731866072 3.7372960302 12.1141500000
+Fe  3.8839016072 3.7372960302 12.1141500000
+Fe  2.5894144643 4.4847283275 14.1558688410
+Fe  2.5892332143 0.0063683779 14.1711326700
+Fe  1.3002612485 2.2392023987 14.1713749530
+Fe  3.8783605372 2.2392920941 14.1711326700
+

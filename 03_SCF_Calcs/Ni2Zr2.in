@@ -1,0 +1,68 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Ni2Zr2'
+   prefix           = 'Ni2Zr2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   nspin            = 2
+   starting_magnetization(1) = 0.5
+   starting_magnetization(2) = 0.0
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Ni  58.6934 Ni.pbe-n-rrkjus_psl.1.0.0.UPF
+Zr  91.224 Zr.pbe-spn-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.57173300000000 0.00000000000000 0.00000000000000
+1.84713700000000 5.25664300000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.54616700000000
+
+ATOMIC_POSITIONS alat
+Ni  0.0000000000 0.0000000000 10.0000000000
+Ni  3.7094350000 2.6283213000 10.0000000000
+Zr  2.7858664000 0.0000000000 10.0000000000
+Zr  0.9235686000 2.6283213000 10.0000000000
+Ni  5.5717328000 3.9478530000 12.2730836000
+Ni  1.8622979000 1.3195317000 12.2730836000
+Zr  2.7858664000 3.9478530000 12.2730836000
+Zr  4.6481643000 1.3195317000 12.2730836000
+Ni  3.7237472000 2.6384525000 14.3088550000
+Ni  0.0142417000 0.0101001000 14.3088297000
+Zr  0.9357924000 2.6369773000 14.5694475000
+Zr  2.7980796000 0.0086581000 14.5694474000
+

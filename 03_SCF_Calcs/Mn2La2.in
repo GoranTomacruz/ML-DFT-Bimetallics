@@ -1,0 +1,68 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Mn2La2'
+   prefix           = 'Mn2La2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   nspin            = 2
+   starting_magnetization(1) = 0.3333333333333333
+   starting_magnetization(2) = 0.0
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Mn  54.938044 Mn.pbe-spn-rrkjus_psl.0.3.1.UPF
+La  138.90547 La.pbe-spfn-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+6.57596600000000 0.00000000000000 0.00000000000000
+2.00100300000000 6.26413000000000 0.00000000000000
+0.00000000000000 0.00000000000000 25.29859300000000
+
+ATOMIC_POSITIONS alat
+Mn  0.0000000000 0.0000000000 10.0000000000
+Mn  4.2884846000 3.1320648000 10.0000000000
+La  3.2879831000 0.0000000000 10.0000000000
+La  1.0005014000 3.1320648000 10.0000000000
+Mn  6.5759663000 4.8027112000 12.6492963000
+Mn  2.2874817000 1.6706464000 12.6492963000
+La  3.2879831000 4.8027112000 12.6492963000
+La  5.5754649000 1.6706464000 12.6492963000
+Mn  4.5747119000 3.3410906000 15.0011526000
+Mn  0.2877322000 0.2101638000 15.0000862000
+La  1.2348098000 3.3027864000 15.2849245000
+La  3.5219027000 0.1712375000 15.2849182000
+

@@ -1,0 +1,65 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Cu2Zn2'
+   prefix           = 'Cu2Zn2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Cu 63.546 Cu.pbe-dn-rrkjus_psl.1.0.0.UPF
+Zn 65.38 Zn.pbe-spn-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.21599600000000 0.00000000000000 0.00000000000000
+2.25287900000000 4.70437600000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.31831600000000
+
+ATOMIC_POSITIONS alat
+Cu 0.0000000000 0.0000000000 10.0000000000 
+Cu 3.7344376000 2.3521882000 10.0000000000 
+Zn 2.6079982000 0.0000000000 10.0000000000 
+Zn 1.1264393000 2.3521882000 10.0000000000 
+Cu 5.2159965000 3.2853690000 12.1591579000 
+Cu 1.4815589000 0.9331808000 12.1591579000 
+Zn 2.6079982000 3.2853690000 12.1591579000 
+Zn 4.0895572000 0.9331808000 12.1591579000 
+Cu 2.9552641000 1.8614179000 14.2996905000 
+Cu 6.6896932000 4.2136016000 14.2996844000 
+Zn 5.5758048000 1.8693152000 14.4827848000 
+Zn 4.0942454000 4.2215048000 14.4827853000 
+

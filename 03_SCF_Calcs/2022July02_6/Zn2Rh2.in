@@ -1,0 +1,65 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Zn2Rh2'
+   prefix           = 'Zn2Rh2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Zn 65.38 Zn.pbe-spn-rrkjus_psl.1.0.0.UPF
+Rh 102.9055 Rh.pbe-spn-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.26057300000000 0.00000000000000 0.00000000000000
+1.75356800000000 4.95970000000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.29525300000000
+
+ATOMIC_POSITIONS alat
+Zn 0.0000000000 0.0000000000 10.0000000000 
+Zn 3.5070702000 2.4798501000 10.0000000000 
+Rh 2.6302864000 0.0000000000 10.0000000000 
+Rh 0.8767838000 2.4798501000 10.0000000000 
+Zn 5.2605728000 3.7197522000 12.1476265000 
+Zn 1.7535026000 1.2399021000 12.1476265000 
+Rh 2.6302864000 3.7197522000 12.1476265000 
+Rh 4.3837890000 1.2399021000 12.1476265000 
+Zn 3.5068884000 2.4799831000 14.3758363000 
+Zn 1.7536301000 4.9594839000 14.3758337000 
+Rh 0.8768834000 2.4799220000 14.2209885000 
+Rh 4.3836353000 4.9595428000 14.2209983000 
+

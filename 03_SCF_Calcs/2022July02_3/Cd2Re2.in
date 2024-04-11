@@ -1,0 +1,65 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Cd2Re2'
+   prefix           = 'Cd2Re2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Cd 112.414 Cd.pbe-n-rrkjus_psl.1.0.0.UPF
+Re 186.207 Re.pbe-spn-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.46196200000000 0.00000000000000 0.00000000000000
+-2.73098100000000 5.43551500000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.72250100000000
+
+ATOMIC_POSITIONS alat
+Cd 0.0000000000 0.0000000000 10.0000000000 
+Cd 2.7309809000 0.0000000000 10.0000000000 
+Re 1.3654905000 2.7177573000 10.0000000000 
+Re -1.3654905000 2.7177573000 10.0000000000 
+Cd 2.7309809000 1.3721345000 12.3612505000 
+Cd 0.0000000000 1.3721345000 12.3612505000 
+Re -1.3654905000 4.0898918000 12.3612505000 
+Re 1.3654905000 4.0898918000 12.3612505000 
+Cd -0.0005474000 2.5114239000 15.1595673000 
+Cd 2.7313693000 2.5114296000 15.1596266000 
+Re 1.3655280000 5.1145744000 14.5410997000 
+Re -1.3655339000 5.1145217000 14.5410787000 
+

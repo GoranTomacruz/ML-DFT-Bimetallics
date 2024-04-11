@@ -1,0 +1,68 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Ni2W2'
+   prefix           = 'Ni2W2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   nspin            = 2
+   starting_magnetization(1) = 0.5
+   starting_magnetization(2) = 0.0
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Ni  58.6934 Ni.pbe-n-rrkjus_psl.1.0.0.UPF
+W  183.84 W.pbe-spn-rrkjus_psl.0.2.3.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.34078800000000 0.00000000000000 0.00000000000000
+2.66149500000000 4.63038500000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.36313500000000
+
+ATOMIC_POSITIONS alat
+Ni  0.0000000000 0.0000000000 10.0000000000
+Ni  4.0011416000 2.3151926000 10.0000000000
+W  2.6703942000 0.0000000000 10.0000000000
+W  1.3307474000 2.3151926000 10.0000000000
+Ni  5.3407884000 3.0903564000 12.1815677000
+Ni  1.3396468000 0.7751638000 12.1815677000
+W  2.6703942000 3.0903564000 12.1815677000
+W  4.0100410000 0.7751638000 12.1815677000
+Ni  2.7050446000 1.5652276000 14.3163419000
+Ni  6.7062661000 3.8804669000 14.3164556000
+W  5.3783828000 1.5669631000 14.2827507000
+W  4.0387640000 3.8821084000 14.2827505000
+

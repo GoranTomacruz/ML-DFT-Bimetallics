@@ -1,0 +1,65 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Ta2Au2'
+   prefix           = 'Ta2Au2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Ta 180.94788 Ta.pbe-spfn-rrkjus_psl.1.0.0.UPF
+Au 196.966569 Au.pbe-n-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.83023900000000 0.00000000000000 0.00000000000000
+-2.91511900000000 5.10140300000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.78457100000000
+
+ATOMIC_POSITIONS alat
+Ta 0.0000000000 0.0000000000 10.0000000000 
+Ta 2.9151193000 0.0000000000 10.0000000000 
+Au 1.4575596000 2.5507016000 10.0000000000 
+Au -1.4575596000 2.5507016000 10.0000000000 
+Ta 2.9151193000 1.6658006000 12.3922853000 
+Ta 0.0000000000 1.6658006000 12.3922853000 
+Au -1.4575596000 4.2165022000 12.3922853000 
+Au 1.4575596000 4.2165022000 12.3922853000 
+Ta -0.0000019000 3.2924413000 14.6502967000 
+Ta 2.9151196000 3.2924453000 14.6502980000 
+Au 4.3726779000 0.8001847000 14.8362233000 
+Au 1.4575606000 0.8001845000 14.8362171000 
+

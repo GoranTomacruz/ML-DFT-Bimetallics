@@ -1,0 +1,68 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Co2Zn2'
+   prefix           = 'Co2Zn2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   nspin            = 2
+   starting_magnetization(1) = 0.7058823529411765
+   starting_magnetization(2) = 0.0
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Co  58.933194 Co.pbe-spn-rrkjus_psl.0.3.1.UPF
+Zn  65.38 Zn.pbe-spn-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.15906400000000 0.00000000000000 0.00000000000000
+-2.57953200000000 4.53412200000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.24279400000000
+
+ATOMIC_POSITIONS alat
+Co  0.0000000000 0.0000000000 10.0000000000
+Co  2.5795320000 0.0000000000 10.0000000000
+Zn  1.2897660000 2.2670611000 10.0000000000
+Zn  -1.2897660000 2.2670611000 10.0000000000
+Co  2.5795320000 1.4675355000 12.1213969000
+Co  -0.0000000000 1.4675355000 12.1213969000
+Zn  -1.2897660000 3.7345966000 12.1213969000
+Zn  1.2897660000 3.7345966000 12.1213969000
+Co  -0.0002635000 2.7446808000 14.1072412000
+Co  2.5792684000 2.7447877000 14.1075905000
+Zn  3.8692241000 0.5168807000 14.4437857000
+Zn  1.2894205000 0.5168780000 14.4437859000
+

@@ -1,0 +1,68 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Co2Ti2'
+   prefix           = 'Co2Ti2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   nspin            = 2
+   starting_magnetization(1) = 0.7058823529411765
+   starting_magnetization(2) = 0.0
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Co  58.933194 Co.pbe-spn-rrkjus_psl.0.3.1.UPF
+Ti  47.867 Ti.pbe-spn-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.17798300000000 0.00000000000000 0.00000000000000
+1.71709200000000 4.88498700000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.22504700000000
+
+ATOMIC_POSITIONS alat
+Co  0.0000000000 0.0000000000 10.0000000000
+Co  3.4475373000 2.4424936000 10.0000000000
+Ti  2.5889913000 0.0000000000 10.0000000000
+Ti  0.8585459000 2.4424936000 10.0000000000
+Co  5.1779827000 3.6684707000 12.1125234000
+Co  1.7304454000 1.2259771000 12.1125234000
+Ti  2.5889913000 3.6684707000 12.1125234000
+Ti  4.3194367000 1.2259771000 12.1125234000
+Co  3.4570891000 2.4492618000 13.9928040000
+Co  0.0098277000 0.0069616000 13.9929184000
+Ti  0.8672334000 2.4486108000 14.2592213000
+Ti  2.5976436000 0.0061676000 14.2592200000
+

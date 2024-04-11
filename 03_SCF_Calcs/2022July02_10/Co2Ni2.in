@@ -1,0 +1,68 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Co2Ni2'
+   prefix           = 'Co2Ni2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   nspin            = 2
+   starting_magnetization(1) = 0.7058823529411765
+   starting_magnetization(2) = 0.5
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Co  58.933194 Co.pbe-spn-rrkjus_psl.0.3.1.UPF
+Ni  58.6934 Ni.pbe-n-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+4.94810000000000 0.00000000000000 0.00000000000000
+-2.47405000000000 4.38389100000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.08483200000000
+
+ATOMIC_POSITIONS alat
+Co  0.0000000000 0.0000000000 10.0000000000
+Co  2.4740500000 0.0000000000 10.0000000000
+Ni  1.2370250000 2.1919453000 10.0000000000
+Ni  -1.2370250000 2.1919453000 10.0000000000
+Co  2.4740500000 1.3962309000 12.0424159000
+Co  -0.0000000000 1.3962309000 12.0424159000
+Ni  -1.2370250000 3.5881762000 12.0424159000
+Ni  1.2370250000 3.5881762000 12.0424159000
+Co  0.0000007000 2.8068774000 14.0451847000
+Co  2.4740503000 2.8067364000 14.0447613000
+Ni  3.7109223000 0.6295614000 14.0543129000
+Ni  1.2371697000 0.6295473000 14.0543358000
+

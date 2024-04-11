@@ -1,0 +1,65 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Ti2Pd2'
+   prefix           = 'Ti2Pd2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Ti 47.867 Ti.pbe-spn-rrkjus_psl.1.0.0.UPF
+Pd 106.42 Pd.pbe-n-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.60580800000000 0.00000000000000 0.00000000000000
+2.70675200000000 4.90903000000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.60080900000000
+
+ATOMIC_POSITIONS alat
+Ti 0.0000000000 0.0000000000 10.0000000000 
+Ti 4.1562800000 2.4545151000 10.0000000000 
+Pd 2.8029040000 0.0000000000 10.0000000000 
+Pd 1.3533760000 2.4545151000 10.0000000000 
+Ti 5.6058080000 3.3105422000 12.3004047000 
+Ti 1.4495280000 0.8560271000 12.3004047000 
+Pd 2.8029040000 3.3105422000 12.3004047000 
+Pd 4.2524320000 0.8560271000 12.3004047000 
+Ti 3.1408126000 1.8548232000 14.5560160000 
+Ti 7.2971024000 4.3093451000 14.5560118000 
+Pd 5.9563160000 1.8622632000 14.5662444000 
+Pd 4.5067874000 4.3167835000 14.5662404000 
+

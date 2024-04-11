@@ -1,0 +1,65 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Cu2Hf2'
+   prefix           = 'Cu2Hf2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Cu 63.546 Cu.pbe-dn-rrkjus_psl.1.0.0.UPF
+Hf 178.49 Hf.pbe-spn-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.61679300000000 0.00000000000000 0.00000000000000
+1.92808900000000 5.27549400000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.60201900000000
+
+ATOMIC_POSITIONS alat
+Cu 0.0000000000 0.0000000000 10.0000000000 
+Cu 3.7724413000 2.6377471000 10.0000000000 
+Hf 2.8083966000 0.0000000000 10.0000000000 
+Hf 0.9640446000 2.6377471000 10.0000000000 
+Cu 5.6167933000 3.9273455000 12.3010097000 
+Cu 1.8443520000 1.2895984000 12.3010097000 
+Hf 2.8083966000 3.9273455000 12.3010097000 
+Hf 4.6527487000 1.2895984000 12.3010097000 
+Cu 3.6896582000 2.5798596000 14.5165887000 
+Cu 7.4620833000 5.2176221000 14.5165971000 
+Hf 6.5048368000 2.5846062000 14.5697448000 
+Hf 4.6604782000 5.2223510000 14.5697447000 
+

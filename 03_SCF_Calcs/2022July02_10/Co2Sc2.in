@@ -1,0 +1,68 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Co2Sc2'
+   prefix           = 'Co2Sc2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   nspin            = 2
+   starting_magnetization(1) = 0.7058823529411765
+   starting_magnetization(2) = 0.0
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Co  58.933194 Co.pbe-spn-rrkjus_psl.0.3.1.UPF
+Sc  44.955908 Sc.pbe-spn-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.40690500000000 0.00000000000000 0.00000000000000
+1.79781900000000 5.09926100000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.41333900000000
+
+ATOMIC_POSITIONS alat
+Co  0.0000000000 0.0000000000 10.0000000000
+Co  3.6023622000 2.5496307000 10.0000000000
+Sc  2.7034525000 0.0000000000 10.0000000000
+Sc  0.8989097000 2.5496307000 10.0000000000
+Co  5.4069050000 3.8268253000 12.2066696000
+Co  1.8045428000 1.2771946000 12.2066696000
+Sc  2.7034525000 3.8268253000 12.2066696000
+Sc  4.5079953000 1.2771946000 12.2066696000
+Co  3.6082376000 2.5537941000 14.2651990000
+Co  0.0060128000 0.0042542000 14.2651766000
+Sc  0.9035773000 2.5528529000 14.4659707000
+Sc  2.7080414000 0.0033316000 14.4659720000
+

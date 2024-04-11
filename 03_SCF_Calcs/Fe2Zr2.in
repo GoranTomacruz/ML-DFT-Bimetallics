@@ -1,0 +1,68 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Fe2Zr2'
+   prefix           = 'Fe2Zr2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   nspin            = 2
+   starting_magnetization(1) = 0.375
+   starting_magnetization(2) = 0.0
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Fe  55.845 Fe.pbe-n-rrkjus_psl.1.0.0.UPF
+Zr  91.224 Zr.pbe-spn-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.48302600000000 0.00000000000000 0.00000000000000
+1.81347200000000 5.17444600000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.47244500000000
+
+ATOMIC_POSITIONS alat
+Fe  0.0000000000 0.0000000000 10.0000000000
+Fe  3.6482490000 2.5872232000 10.0000000000
+Zr  2.7415131000 0.0000000000 10.0000000000
+Zr  0.9067359000 2.5872232000 10.0000000000
+Fe  5.4830262000 3.8883894000 12.2362224000
+Fe  1.8347772000 1.3011661000 12.2362224000
+Zr  2.7415131000 3.8883894000 12.2362224000
+Zr  4.5762903000 1.3011661000 12.2362224000
+Fe  3.6656301000 2.5995512000 14.3465948000
+Fe  0.0172783000 0.0122517000 14.3465441000
+Zr  0.9209933000 2.5971151000 14.5612800000
+Zr  2.7555642000 0.0101838000 14.5612765000
+

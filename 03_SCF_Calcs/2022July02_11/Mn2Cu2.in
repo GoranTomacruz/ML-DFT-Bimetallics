@@ -1,0 +1,68 @@
+&CONTROL
+   calculation      = 'scf'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = './Mn2Cu2'
+   prefix           = 'Mn2Cu2_beef'
+   pseudo_dir       = '../pseudo'
+   tefield          = .true.
+   dipfield         = .true.
+/
+&SYSTEM
+   celldm(1)        = 1.889726
+   ecutwfc          = 55.123963237125
+   ecutrho          = 551.23963237125
+   nosym            = .true.
+   occupations      = 'smearing'
+   degauss          = 0.01D0
+   smearing         = 'fd'
+   input_dft        = 'BEEF-vdW'
+   edir             = 3
+   emaxpos          = 0.95
+   eopreg           = 0.05
+   eamp             = 0.01
+   nspin            = 2
+   starting_magnetization(1) = 0.3333333333333333
+   starting_magnetization(2) = 0.0
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 500
+   conv_thr         = 1e-05
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.1
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Mn  54.938044 Mn.pbe-spn-rrkjus_psl.0.3.1.UPF
+Cu  63.546 Cu.pbe-dn-rrkjus_psl.1.0.0.UPF
+
+K_POINTS automatic
+12 12 1  0 0 0
+
+CELL_PARAMETERS alat
+5.21933800000000 0.00000000000000 0.00000000000000
+1.78931100000000 4.90304600000000 0.00000000000000
+0.00000000000000 0.00000000000000 24.27575000000000
+
+ATOMIC_POSITIONS alat
+Mn  0.0000000000 0.0000000000 10.0000000000
+Mn  3.5043248000 2.4515228000 10.0000000000
+Cu  2.6096691000 0.0000000000 10.0000000000
+Cu  0.8946557000 2.4515228000 10.0000000000
+Mn  5.2193382000 3.6512958000 12.1378748000
+Mn  1.7150134000 1.1997730000 12.1378748000
+Cu  2.6096691000 3.6512958000 12.1378748000
+Cu  4.3246825000 1.1997730000 12.1378748000
+Mn  3.4343139000 2.4025465000 14.2986271000
+Mn  6.9386623000 4.8540852000 14.2986441000
+Cu  6.0419924000 2.4011736000 14.1961924000
+Cu  4.3270011000 4.8526663000 14.1961916000
+
