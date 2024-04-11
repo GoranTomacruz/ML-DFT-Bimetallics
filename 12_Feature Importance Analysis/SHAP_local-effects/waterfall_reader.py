@@ -55,7 +55,7 @@ def feature_importances_shap_values(shap_values, features):
     return imp_df
 
 adsorbates = ['C', 'H', 'O']
-regression = 'GPR'
+regression = 'ANN'
 cmap = plt.cm.plasma
 #workbook = xlsxwriter.Workbook(regression + "_regression_results_v9.4_STAGE-2-FINAL-decoded.xlsx")
 
